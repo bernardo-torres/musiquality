@@ -24,7 +24,7 @@ import java.util.LinkedList;
  * 9 - Ride
  * 
  */
-public class Levada implements Runnable{
+public class Levada{
     private final Notas n;
     private int tam;
     private int bpm;
@@ -54,19 +54,18 @@ public class Levada implements Runnable{
     public void setTamanhoMax(int nTempos) throws SystemException {
         if(nTempos<0 || nTempos>=dashboard.length)
             throw new SystemException("Tamanho inválido!");
-        
         this.tam = nTempos;
         for(int i=tam;i<dashboard.length;i++)
                 dashboard[i].clear();
-            
-        
     }
 
-    public void addNota(String nome, int tempo) throws ModelException{
-        if(tempo>=0&&tempo<dashboard.length){
-            if(!dashboard[tempo].contains(nome))
-                dashboard[tempo].add(nome);
-        }
+    public void addNota(String nome, int tempo) throws SystemException{
+        if(tempo<0 || tempo>=dashboard.length)
+            throw new SystemException("Tamanho invalido!");
+        
+        if(!dashboard[tempo].contains(nome))
+            dashboard[tempo].add(nome);
+        
     }
 
     public void removeNota(int posicao,String nome) throws SystemException, ModelException{
@@ -77,18 +76,15 @@ public class Levada implements Runnable{
         
         if (remove == false)
             throw new ModelException ("A nota "+ nome + " não está no tempo " + posicao);
-        
     }
 
     public void limpaNotas() {
         for(int i=0;i<tam;i++)  dashboard[i].clear();
     }
 
-    
-    public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        //Toca uma vez a levada
-    }
+    public void tocar(){}
+    public void parar(){}
+    public void pausar(){}
 
     public int getBpm() {return bpm;}
     public void setBpm(int bpm) {this.bpm = bpm;}
@@ -99,6 +95,4 @@ public class Levada implements Runnable{
             throw new SystemException("Índice inválido!");
         return dashboard[t];
     }
-
-    
 }

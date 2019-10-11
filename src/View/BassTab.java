@@ -5,32 +5,41 @@
  */
 package View;
 
-import Controller.DrumController;
+import Controller.BassController;
+import Model.Model.Notas;
+import Model.Model.NotasBaixo;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 /**
  *
  * @author Usuário
  */
-public class DrumTab {
+public class BassTab {
     private JPanel mainTab,top,bot;
     private JPanel auxTop1,auxTop2; 
     private JPanel auxBot1,auxBot2;
+    private JPanel auxBot21;
     private JCheckBox[][] rhythms;
     private JButton[] rhythmList;
     private JCheckBox[][] tempo;
     private JLabel[] notes, nTempo;
-    private JLabel tLabel;
-    private DrumController d;
-    
-    
-    public DrumTab(){
-        d=new DrumController();
+    private BassController b;
+    private JLabel oitavaLabel,tempoLabel;
+    private JComboBox c1;
+    private JRadioButton[] oitavas;
+    private ButtonGroup g;
+            
+    public BassTab(){
+        b=new BassController();
         this.iniialize();
     }
 
@@ -71,11 +80,13 @@ public class DrumTab {
         }
         top.add(auxTop1,BorderLayout.WEST);
         top.add(auxTop2,BorderLayout.CENTER);
+        
     }
 
     private void iniializeBot() {
         bot.setLayout(new BorderLayout());
         auxBot1.setLayout(new GridLayout(10,17));
+        auxBot2.setLayout(new GridLayout(4,2));
         double p=0;
         nTempo[0]=new JLabel();
         for(int i = 1;i<nTempo.length;i++,p+=0.25)
@@ -92,23 +103,37 @@ public class DrumTab {
                auxBot1.add(tempo[i][j]);
             }
         }
-        auxBot2.add(tLabel);
+        auxBot2.add(tempoLabel);
+        auxBot2.add(c1);
+        auxBot2.add(oitavaLabel);
+        
+        for(int i=0;i<oitavas.length;i++){
+            oitavas[i]=new JRadioButton(String.valueOf(i));
+            g.add(oitavas[i]);
+            auxBot2.add(oitavas[i]);
+        }
         
         bot.add(auxBot1,BorderLayout.CENTER);
         bot.add(auxBot2,BorderLayout.EAST);
     }
 
     private void initializeComponents() {
+        String[] s={"0.25","0.5","0.75","1","1.25","1.5","1.75","2","2.25","2.5","2.75","3","3.25","3.5","3.75","4"};
         mainTab = new JPanel();
         top=new JPanel();
         bot=new JPanel();
+        g=new ButtonGroup();
+        c1=new JComboBox(s);
+        oitavas=new JRadioButton[5];
+        oitavaLabel=new JLabel("Oitava");
+        tempoLabel=new JLabel ("Tempos");
         auxBot1=new JPanel();
         auxBot2=new JPanel();
-        tLabel=new JLabel("Tempo");
+        auxBot21=new JPanel();
         nTempo=new JLabel[17];
        //tempo=new JCheckBox[n.getQtd()][16];
         tempo=new JCheckBox[9][16];
         //notes=new JLabel[n.getQtd()];
         notes=new JLabel[9];
-   }
+   }    
 }

@@ -5,7 +5,9 @@
  */
 package View;
 
-import Controller.DrumController;
+import Controller.Guitar1Controller;
+import Model.Model.Notas;
+import Model.Model.NotasGuitarra1;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -17,20 +19,19 @@ import javax.swing.JPanel;
  *
  * @author Usuário
  */
-public class DrumTab {
+public class Guitar1Tab {
     private JPanel mainTab,top,bot;
     private JPanel auxTop1,auxTop2; 
     private JPanel auxBot1,auxBot2;
+    private JPanel auxBot21;
     private JCheckBox[][] rhythms;
     private JButton[] rhythmList;
     private JCheckBox[][] tempo;
     private JLabel[] notes, nTempo;
-    private JLabel tLabel;
-    private DrumController d;
+    private Guitar1Controller g;
     
-    
-    public DrumTab(){
-        d=new DrumController();
+    public Guitar1Tab(){
+        g=new Guitar1Controller();
         this.iniialize();
     }
 
@@ -71,6 +72,7 @@ public class DrumTab {
         }
         top.add(auxTop1,BorderLayout.WEST);
         top.add(auxTop2,BorderLayout.CENTER);
+        
     }
 
     private void iniializeBot() {
@@ -92,10 +94,8 @@ public class DrumTab {
                auxBot1.add(tempo[i][j]);
             }
         }
-        auxBot2.add(tLabel);
-        
         bot.add(auxBot1,BorderLayout.CENTER);
-        bot.add(auxBot2,BorderLayout.EAST);
+        bot.add(auxBot2,BorderLayout.WEST);
     }
 
     private void initializeComponents() {
@@ -104,11 +104,11 @@ public class DrumTab {
         bot=new JPanel();
         auxBot1=new JPanel();
         auxBot2=new JPanel();
-        tLabel=new JLabel("Tempo");
+        auxBot21=new JPanel();
         nTempo=new JLabel[17];
        //tempo=new JCheckBox[n.getQtd()][16];
         tempo=new JCheckBox[9][16];
         //notes=new JLabel[n.getQtd()];
         notes=new JLabel[9];
-   }
+   }    
 }
