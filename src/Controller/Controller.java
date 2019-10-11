@@ -9,6 +9,6 @@ package Controller;
  *
  * @author Usuário
  */
-public class BassController implements Controller{
+public interface Controller {
     
 }

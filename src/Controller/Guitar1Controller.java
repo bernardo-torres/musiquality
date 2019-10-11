@@ -9,6 +9,6 @@ package Controller;
  *
  * @author Usuário
  */
-public class Guitar1Controller {
+public class Guitar1Controller implements Controller{
     
 }

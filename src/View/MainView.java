@@ -1,15 +1,18 @@
 package View;
 
 
+import Controller.MainController;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -26,45 +29,39 @@ public class MainView {
     
     private JFrame mainFrame;
     private JPanel control;
-    private JButton tocar, parar, pausar;
-    private JCheckBox drum,bass,guitar1,guitar2;
-    private JSlider bpm;
-    
+    private JButton tocar, parar, pausar,salvar,carregar;
+    private JSlider bpmSlider;
+    private JLabel test;
     private JTabbedPane conteiner;
-    
+    private int bpm;
+    private MainController controller;
+    private DrumTab drum;
+    private BassTab bass;
+    private Guitar1Tab g1;
+    private Guitar2Tab g2;
     
     public MainView (){
+        controller=new MainController();
+        
         mainFrame = new JFrame("Musiquality");
         mainFrame.setLayout(new BorderLayout());
         
         conteiner = new JTabbedPane();
-        //mainDrum = new JPanel();
-        //mainBass = new JPanel();
-        //mainGuitar1 = new JPanel();
-        //mainGuitar2 = new JPanel();
-        
-        //mainDrum.setLayout(new GridLayout(2,1));
-        //mainBass.setLayout(new GridLayout(2,1));
-        //mainGuitar1.setLayout(new GridLayout(2,1));
-        //mainGuitar2.setLayout(new GridLayout(2,1));
        
-        DrumTab drums=new DrumTab();
-        BassTab basses=new BassTab();
-        Guitar1Tab g1=new Guitar1Tab();
-        Guitar2Tab g2=new Guitar2Tab();
+        drum = new DrumTab();
+        bass = new BassTab();
+        g1 = new Guitar1Tab();
+        g2 = new Guitar2Tab();
         
-        conteiner.add("Bateria",drums.get());
-        conteiner.add("Baixo",basses.get());
+        conteiner.add("Bateria",drum.get());
+        conteiner.add("Baixo",bass.get());
         conteiner.add("Guitarra 1",g1.get());
         conteiner.add("Guitarra 2",g2.get());
-        
-        //this.initialize_drum();
-//        this.initialize_bass();
-  //      this.initialize_guitar1();
-    //    this.initialize_guitar2();
+       
         mainFrame.add(conteiner,BorderLayout.CENTER);
-        initialize_control();
-        mainFrame.setSize(1200, 600);
+        this.initialize_control();
+        this.setListeners();
+        mainFrame.setSize(1200, 700);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setVisible(true);
     }
@@ -76,30 +73,67 @@ public class MainView {
         pausar = new JButton ("Pause");
         parar = new JButton("Stop");
         
-        bpm = new JSlider(JSlider.HORIZONTAL,BPM_MIN,BPM_MAX,BPM_INIT);
-        bpm.setMajorTickSpacing((BPM_MAX-BPM_MIN)/5);
-        bpm.setMinorTickSpacing((BPM_MAX-BPM_MIN)/10);
-        bpm.setPaintTicks(true);
-        bpm.setPaintLabels(true);
+        bpmSlider = new JSlider(JSlider.HORIZONTAL,BPM_MIN,BPM_MAX,BPM_INIT);
+        bpmSlider.setMajorTickSpacing((BPM_MAX-BPM_MIN)/5);
+        bpmSlider.setMinorTickSpacing((BPM_MAX-BPM_MIN)/10);
+        bpmSlider.setPaintTicks(true);
+        bpmSlider.setPaintLabels(true);
         
-        drum = new JCheckBox("Bateria");
-        bass = new JCheckBox("Baixo");
-        guitar1 = new JCheckBox("Guitarra 1");
-        guitar2 = new JCheckBox("Guitarra 2");
-        
+        salvar = new JButton("Salvar Musica");
+        carregar = new JButton("Carregar Musica");
+        test = new JLabel("Test");
         
         control.add(tocar);
         control.add(pausar);
         control.add(parar);
-        control.add(bpm);
+        control.add(bpmSlider);
         
-        control.add(drum);
-        control.add(bass);
-        control.add(guitar1);
-        control.add(guitar2);
+        control.add(salvar);
+        control.add(carregar);
+        control.add(test);
         mainFrame.add(control,BorderLayout.NORTH);
         
     }
+
+    private void setListeners() {
+        bpmSlider.addChangeListener(
+            new ChangeListener(){
+                @Override
+                public void stateChanged(ChangeEvent e) {
+                    bpm=bpmSlider.getValue();
+                }
+            }
+        );
+        
+        tocar.addActionListener(
+            new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    controller.tocar(drum,bass,g1,g2);
+                }
+            }
+        );
+        
+        pausar.addActionListener(
+            new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    controller.pausar(drum,bass,g1,g2);
+                }
+            }
+        );
+        parar.addActionListener(
+            new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    controller.parar(drum,bass,g1,g2);
+                }
+            }
+        );
+    }
+
+    
+    public int getBpm() {return bpm;}
     
     
 }

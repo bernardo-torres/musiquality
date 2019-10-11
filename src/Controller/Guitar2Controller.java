@@ -13,7 +13,7 @@ import Model.Model.NotasGuitarra2;
  *
  * @author Usuário
  */
-public class Guitar2Controller {
+public class Guitar2Controller implements Controller{
     private Notas n;
     private Levada[] l;
     private final int NUM_LEVADAS;

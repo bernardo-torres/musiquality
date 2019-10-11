@@ -27,7 +27,6 @@ public class BassTab {
     private JPanel mainTab,top,bot;
     private JPanel auxTop1,auxTop2; 
     private JPanel auxBot1,auxBot2;
-    private JPanel auxBot21;
     private JCheckBox[][] rhythms;
     private JButton[] rhythmList;
     private JCheckBox[][] tempo;
@@ -85,7 +84,7 @@ public class BassTab {
 
     private void iniializeBot() {
         bot.setLayout(new BorderLayout());
-        auxBot1.setLayout(new GridLayout(10,17));
+        auxBot1.setLayout(new GridLayout(13,17));
         auxBot2.setLayout(new GridLayout(4,2));
         double p=0;
         nTempo[0]=new JLabel();
@@ -95,7 +94,7 @@ public class BassTab {
         for(int i=0;i<17;i++)
            auxBot1.add(nTempo[i]);
        
-        for(int i = 0;i<9;i++){
+        for(int i = 0;i<notes.length;i++){
             notes[i]=new JLabel("Nota "+ i);
             auxBot1.add(notes[i]);
             for(int j=0;j<16;j++){
@@ -106,7 +105,6 @@ public class BassTab {
         auxBot2.add(tempoLabel);
         auxBot2.add(c1);
         auxBot2.add(oitavaLabel);
-        
         for(int i=0;i<oitavas.length;i++){
             oitavas[i]=new JRadioButton(String.valueOf(i));
             g.add(oitavas[i]);
@@ -129,11 +127,10 @@ public class BassTab {
         tempoLabel=new JLabel ("Tempos");
         auxBot1=new JPanel();
         auxBot2=new JPanel();
-        auxBot21=new JPanel();
         nTempo=new JLabel[17];
        //tempo=new JCheckBox[n.getQtd()][16];
-        tempo=new JCheckBox[9][16];
+        tempo=new JCheckBox[12][16];
         //notes=new JLabel[n.getQtd()];
-        notes=new JLabel[9];
+        notes=new JLabel[12];
    }    
 }

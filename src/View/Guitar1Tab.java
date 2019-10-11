@@ -5,15 +5,17 @@
  */
 package View;
 
+import Controller.Controller;
 import Controller.Guitar1Controller;
-import Model.Model.Notas;
-import Model.Model.NotasGuitarra1;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -23,15 +25,18 @@ public class Guitar1Tab {
     private JPanel mainTab,top,bot;
     private JPanel auxTop1,auxTop2; 
     private JPanel auxBot1,auxBot2;
-    private JPanel auxBot21;
     private JCheckBox[][] rhythms;
     private JButton[] rhythmList;
     private JCheckBox[][] tempo;
     private JLabel[] notes, nTempo;
-    private Guitar1Controller g;
-    
+    private Controller g1;
+    private JLabel oitavaLabel,tempoLabel;
+    private JComboBox c1;
+    private JRadioButton[] oitavas;
+    private ButtonGroup g;
+            
     public Guitar1Tab(){
-        g=new Guitar1Controller();
+        g1=new Guitar1Controller();
         this.iniialize();
     }
 
@@ -77,7 +82,8 @@ public class Guitar1Tab {
 
     private void iniializeBot() {
         bot.setLayout(new BorderLayout());
-        auxBot1.setLayout(new GridLayout(10,17));
+        auxBot1.setLayout(new GridLayout(13,17));
+        auxBot2.setLayout(new GridLayout(4,2));
         double p=0;
         nTempo[0]=new JLabel();
         for(int i = 1;i<nTempo.length;i++,p+=0.25)
@@ -86,7 +92,7 @@ public class Guitar1Tab {
         for(int i=0;i<17;i++)
            auxBot1.add(nTempo[i]);
        
-        for(int i = 0;i<9;i++){
+        for(int i = 0;i<notes.length;i++){
             notes[i]=new JLabel("Nota "+ i);
             auxBot1.add(notes[i]);
             for(int j=0;j<16;j++){
@@ -94,21 +100,35 @@ public class Guitar1Tab {
                auxBot1.add(tempo[i][j]);
             }
         }
+        auxBot2.add(tempoLabel);
+        auxBot2.add(c1);
+        auxBot2.add(oitavaLabel);
+        for(int i=0;i<oitavas.length;i++){
+            oitavas[i]=new JRadioButton(String.valueOf(i));
+            g.add(oitavas[i]);
+            auxBot2.add(oitavas[i]);
+        }
+        
         bot.add(auxBot1,BorderLayout.CENTER);
-        bot.add(auxBot2,BorderLayout.WEST);
+        bot.add(auxBot2,BorderLayout.EAST);
     }
 
     private void initializeComponents() {
+        String[] s={"0.25","0.5","0.75","1","1.25","1.5","1.75","2","2.25","2.5","2.75","3","3.25","3.5","3.75","4"};
         mainTab = new JPanel();
         top=new JPanel();
         bot=new JPanel();
+        g=new ButtonGroup();
+        c1=new JComboBox(s);
+        oitavas=new JRadioButton[5];
+        oitavaLabel=new JLabel("Oitava");
+        tempoLabel=new JLabel ("Tempos");
         auxBot1=new JPanel();
         auxBot2=new JPanel();
-        auxBot21=new JPanel();
         nTempo=new JLabel[17];
        //tempo=new JCheckBox[n.getQtd()][16];
-        tempo=new JCheckBox[9][16];
+        tempo=new JCheckBox[12][16];
         //notes=new JLabel[n.getQtd()];
-        notes=new JLabel[9];
-   }    
+        notes=new JLabel[12];
+   }        
 }

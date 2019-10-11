@@ -9,6 +9,6 @@ package Controller;
  *
  * @author Usuário
  */
-public class DrumController {
+public class DrumController implements Controller{
     
 }

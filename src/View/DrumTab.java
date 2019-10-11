@@ -10,6 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -26,6 +27,7 @@ public class DrumTab {
     private JCheckBox[][] tempo;
     private JLabel[] notes, nTempo;
     private JLabel tLabel;
+    private JComboBox c1;
     private DrumController d;
     
     
@@ -76,6 +78,8 @@ public class DrumTab {
     private void iniializeBot() {
         bot.setLayout(new BorderLayout());
         auxBot1.setLayout(new GridLayout(10,17));
+        auxBot2.setLayout(new GridLayout(4,2));
+        
         double p=0;
         nTempo[0]=new JLabel();
         for(int i = 1;i<nTempo.length;i++,p+=0.25)
@@ -93,6 +97,7 @@ public class DrumTab {
             }
         }
         auxBot2.add(tLabel);
+        auxBot2.add(c1);
         
         bot.add(auxBot1,BorderLayout.CENTER);
         bot.add(auxBot2,BorderLayout.EAST);
@@ -100,6 +105,8 @@ public class DrumTab {
 
     private void initializeComponents() {
         mainTab = new JPanel();
+        String[] s={"0.25","0.5","0.75","1","1.25","1.5","1.75","2","2.25","2.5","2.75","3","3.25","3.5","3.75","4"};
+        c1=new JComboBox(s);
         top=new JPanel();
         bot=new JPanel();
         auxBot1=new JPanel();
