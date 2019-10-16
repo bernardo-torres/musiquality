@@ -16,16 +16,16 @@ import View.Guitar2Tab;
  */
 public class MainController implements Controller{
 
-    public void tocar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2) {
+    public void tocar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2, int bpm) {
       //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void pausar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2) {
+    public void pausar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2, int bpm) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void parar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void parar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2, int bpm) {
+
     }
     
 }

@@ -109,7 +109,7 @@ public class MainView {
             new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    controller.tocar(drum,bass,g1,g2);
+                    controller.tocar(drum,bass,g1,g2,bpm);
                 }
             }
         );
@@ -118,7 +118,7 @@ public class MainView {
             new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    controller.pausar(drum,bass,g1,g2);
+                    controller.pausar(drum,bass,g1,g2,bpm);
                 }
             }
         );
@@ -126,7 +126,7 @@ public class MainView {
             new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    controller.parar(drum,bass,g1,g2);
+                    controller.parar(drum,bass,g1,g2,bpm);
                 }
             }
         );
