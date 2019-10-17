@@ -6,6 +6,11 @@
 package Model.Persistencia;
 
 import Model.Model.Nota;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +26,8 @@ public class Persistencia{
     //os nomes dos arquivos e das notas referentes a cada um dos instrumentos,
     //assim como as músicas criadas e similares.
     private final String urlCfg;
+    private Scanner input;//Responsável pela leitura de arquivos
+    private LinkedList<Nota> aux; //Salva as notas durante a leitura
     
     private Nota[] bateria;
     private Nota[] baixo;
@@ -28,7 +35,17 @@ public class Persistencia{
     private Nota[] guitarra2;
     
     private Persistencia(){
-        this.urlCfg="";
+        this.urlCfg="src/Model/Persistencia/config.txt";
+        String separator="\\s*,\\s*";
+        String lineSeparator="\\s*"+System.getProperty("line.separator");
+        
+        try {
+            input=new Scanner(Paths.get(urlCfg));
+            input.useDelimiter(separator+"|"+lineSeparator);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível abrir o arquivo!");
+        }
+        aux=new LinkedList();
         this.setNotas();
     }
     
@@ -49,18 +66,81 @@ public class Persistencia{
 
         
     private void setNotas() {
-        bateria = new Nota[9];
-        bateria[0]= new Nota("Closed HH","");
-        bateria[1]= new Nota("Open HH","");
-        bateria[2]=new Nota("Snare","");
-        bateria[3]=new Nota("Tom Hi","");
-        bateria[4]=new Nota("Tom Mid","");
-        bateria[5]=new Nota("Tom Low","");
-        bateria[6]=new Nota ("Kick","");
-        bateria[7]=new Nota("Ride","");
-        bateria[8]=new Nota("Crash","");
+        while (input.hasNext()){
+            String token=input.next();
+            switch(token){
+                case "Bateria":
+                    this.setNotasBateria();
+                    break;
+                case "Guitarra 1":
+                    this.setNotasG1();
+                    break;
+                case "Guitarra 2":
+                    this.setNotasG2();
+                    break;
+                case "Baixo":
+                    this.setNotasBass();
+                    break;
+                default:
+//                    System.out.println(token+"\t"+(";".equals(token)));
+            }
+        }
+            }
+    private void setNotasBateria(){
+        aux.clear();
+        String token=input.next();
+        while(!";".equals(token)){
+            String nome=token;
+            token=input.next();
+            String url=token;
+            Nota n=new Nota(nome,url);
+            aux.add(n);
+            token=input.next();
+        }
+        bateria=new Nota[aux.size()];
+        aux.toArray(bateria);
         
-        
-        //guitarra1 = new Nota
+    }
+    private void setNotasG1(){
+        aux.clear();
+        String token=input.next();
+        while(!";".equals(token)){
+            String nome=token;
+            token=input.next();
+            String url=token;
+            Nota n=new Nota(nome,url);
+            aux.add(n);
+            token=input.next();
+        }
+        guitarra1=new Nota[aux.size()];
+        aux.toArray(guitarra1);
+    }
+    private void setNotasG2(){
+        aux.clear();
+        String token=input.next();
+        while(!";".equals(token)){
+            String nome=token;
+            token=input.next();
+            String url=token;
+            Nota n=new Nota(nome,url);
+            aux.add(n);
+            token=input.next();
+        }
+        guitarra2=new Nota[aux.size()];
+        aux.toArray(guitarra2);
+    }
+    private void setNotasBass(){
+        aux.clear();
+        String token=input.next();
+        while(!";".equals(token)){
+            String nome=token;
+            token=input.next();
+            String url=token;
+            Nota n=new Nota(nome,url);
+            aux.add(n);
+            token=input.next();
+        }
+        baixo=new Nota[aux.size()];
+        aux.toArray(baixo);
     }
 }
