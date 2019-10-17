@@ -24,8 +24,8 @@ public class Persistencia{
     
     private Nota[] bateria;
     private Nota[] baixo;
-    private Nota[] Guitarra1;
-    private Nota[] Guitarra2;
+    private Nota[] guitarra1;
+    private Nota[] guitarra2;
     
     private Persistencia(){
         this.urlCfg="";
@@ -42,15 +42,25 @@ public class Persistencia{
     Funções relacionadas à persistência de dados deverão ser implementadas
     */
     
-    public Nota[] getBateria(){return null;}    
-    public Nota[] getBaixo(){return null;}    
-    public Nota[] getGuitarra1(){return null;}    
-    public Nota[] getGuitarra2(){return null;}    
+    public Nota[] getBateria(){return bateria;}    
+    public Nota[] getBaixo(){return baixo;}    
+    public Nota[] getGuitarra1(){return guitarra1;}    
+    public Nota[] getGuitarra2(){return guitarra2;}    
 
         
     private void setNotas() {
+        bateria = new Nota[9];
+        bateria[0]= new Nota("Closed HH","");
+        bateria[1]= new Nota("Open HH","");
+        bateria[2]=new Nota("Snare","");
+        bateria[3]=new Nota("Tom Hi","");
+        bateria[4]=new Nota("Tom Mid","");
+        bateria[5]=new Nota("Tom Low","");
+        bateria[6]=new Nota ("Kick","");
+        bateria[7]=new Nota("Ride","");
+        bateria[8]=new Nota("Crash","");
         
+        
+        //guitarra1 = new Nota
     }
-    
-    
 }

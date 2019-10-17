@@ -2,6 +2,7 @@ package View;
 
 
 import Controller.MainController;
+import Main.Util;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,12 +34,12 @@ public class MainView {
     private JSlider bpmSlider;
     private JLabel test;
     private JTabbedPane conteiner;
+    
     private int bpm;
     private MainController controller;
     private DrumTab drum;
-    private BassTab bass;
-    private Guitar1Tab g1;
-    private Guitar2Tab g2;
+    private CordaTab bass,g1,g2;
+   
     
     public MainView (){
         controller=new MainController();
@@ -49,9 +50,9 @@ public class MainView {
         conteiner = new JTabbedPane();
        
         drum = new DrumTab();
-        bass = new BassTab();
-        g1 = new Guitar1Tab();
-        g2 = new Guitar2Tab();
+        bass = new CordaTab(Util.BASS);
+        g1 = new CordaTab(Util.GUITAR1);
+        g2 = new CordaTab(Util.GUITAR2);
         
         conteiner.add("Bateria",drum.get());
         conteiner.add("Baixo",bass.get());
@@ -87,20 +88,23 @@ public class MainView {
         control.add(pausar);
         control.add(parar);
         control.add(bpmSlider);
+        control.add(test);
+        
         
         control.add(salvar);
         control.add(carregar);
-        control.add(test);
         mainFrame.add(control,BorderLayout.NORTH);
         
     }
 
     private void setListeners() {
+        
+        
         bpmSlider.addChangeListener(
             new ChangeListener(){
-                @Override
                 public void stateChanged(ChangeEvent e) {
                     bpm=bpmSlider.getValue();
+                    test.setText(String.valueOf(bpm));
                 }
             }
         );

@@ -39,11 +39,10 @@ public class Levada{
     
     private LinkedList<String>[] dashboard;
     
-    public Levada(Notas n,int contraTempos){
+    public Levada(Notas n){
         this.n = n;
-        this.tam = contraTempos;
         this.bpm=0;
-        
+        this.tam=16;
         dashboard = new LinkedList[tam];
         for(int i = 0;i<dashboard.length;i++){
             dashboard[i] = new LinkedList<>();
@@ -52,30 +51,42 @@ public class Levada{
     }
 
     public void setTamanhoMax(int nTempos) throws SystemException {
-        if(nTempos<0 || nTempos>=dashboard.length)
-            throw new SystemException("Tamanho inválido!");
+        if(nTempos < 0 || nTempos>dashboard.length)
+            throw new SystemException("O tamanho " + nTempos + " eh inválido!");
         this.tam = nTempos;
         for(int i=tam;i<dashboard.length;i++)
                 dashboard[i].clear();
     }
 
-    public void addNota(String nome, int tempo) throws SystemException{
-        if(tempo<0 || tempo>=dashboard.length)
+    public void switchNota(String nome,int tempo) throws SystemException{
+        if(tempo<0 || tempo>=tam)
             throw new SystemException("Tamanho invalido!");
-        
+        //System.out.println("Foi");
         if(!dashboard[tempo].contains(nome))
             dashboard[tempo].add(nome);
-        
+        else
+            dashboard[tempo].remove(nome);
+        this.print(dashboard[tempo]);
     }
+    
+    public void addNota(String nome, int tempo) throws SystemException{
+        if(tempo<0 || tempo>=tam)
+            throw new SystemException("Tamanho invalido!");
+        //System.out.println("Foi");
+        if(!dashboard[tempo].contains(nome))
+            dashboard[tempo].add(nome);
+        this.print(dashboard[tempo]);
+    }
+    
 
     public void removeNota(int posicao,String nome) throws SystemException, ModelException{
         if(posicao<0||posicao>=dashboard.length)
             throw new SystemException("Posicao invalida!");
-        
+        System.out.println("remove");
         boolean remove = dashboard[posicao].remove(nome);
-        
         if (remove == false)
             throw new ModelException ("A nota "+ nome + " não está no tempo " + posicao);
+        this.print(dashboard[posicao]);
     }
 
     public void limpaNotas() {
@@ -94,5 +105,15 @@ public class Levada{
         if(t>=tam)
             throw new SystemException("Índice inválido!");
         return dashboard[t];
+    }
+    
+    private void print(LinkedList l){
+        for(int i=0;i<l.size();i++)
+            System.out.print(l.get(i)+"\t");
+        System.out.println();
+    }
+
+    public boolean contains(String nome, int j) {
+        return dashboard[j].contains(nome);
     }
 }

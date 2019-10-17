@@ -10,43 +10,44 @@ import Exceptions.SystemException;
 import Main.Util;
 import Model.Model.Levada;
 import Model.Model.Notas;
-import Model.Model.Notas;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
 /**
  *
  * @author Usuário
  */
-public class DrumController{
-    private Notas bateria;
-    private Levada[] levada;
-    public DrumController(){
+public class CordaController{
+    private Notas n;
+    private Levada[] l;
+    private final int NUM_LEVADAS;
+    public CordaController(int tipo){
         try {
-            bateria=new Notas(Util.DRUM);
+            n=new Notas(tipo);
         } catch (ModelException ex) {
-            Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CordaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        levada=new Levada[10];
-        for(int i=0;i<levada.length;i++)
-            levada[i]=new Levada(bateria);
+        
+        NUM_LEVADAS=10;
+        l=new Levada[NUM_LEVADAS];
+        for(int i=0;i<NUM_LEVADAS;i++)
+            l[i]=new Levada(n);
     }
-    
+
     public String[] getNomes(){
-        return bateria.getNomes();
+        return n.getNomes();
     }
 
     public int getQtd() {
-        return bateria.getQtd();
+        return n.getQtd();
     }
 
 
     public void switchNota(int selec, String text, int j) {
         try {
-            levada[selec].switchNota(text, j);
+            l[selec].switchNota(text, j);
         } catch (SystemException ex) {
             Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -55,7 +56,7 @@ public class DrumController{
     public void removeNota(int selec, String nome, int t) {
         System.out.print("Remove");
         try {
-            levada[selec].removeNota(selec, nome);
+            l[selec].removeNota(selec, nome);
         } catch (SystemException ex) {
             Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ModelException ex) {
@@ -64,23 +65,22 @@ public class DrumController{
          
     }
 
-    public int load(int l,JLabel[] notes, JCheckBox[][] tempo) {
+    public int load(int k,JLabel[] notes, JCheckBox[][] tempo) {
         for(int i=0;i<tempo.length;i++){
             String nome=notes[i].getText();
             for(int j=0;j<tempo[i].length;j++){
-                tempo[i][j].setSelected(levada[l].contains(nome,j));
+                tempo[i][j].setSelected(l[k].contains(nome,j));
             }
         }
-        return levada[l].getTamanho();
+        return l[k].getTamanho();
     }
 
     public void setMaxTempo(int selec, int maxTempos) {
         try {
-            levada[selec].setTamanhoMax(maxTempos+1);
+            l[selec].setTamanhoMax(maxTempos+1);
         } catch (SystemException ex) {
             Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    
 }

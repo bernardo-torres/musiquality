@@ -5,27 +5,26 @@
  */
 package Controller;
 
-import View.BassTab;
+import View.CordaTab;
 import View.DrumTab;
-import View.Guitar1Tab;
-import View.Guitar2Tab;
 
 /**
  *
  * @author Usuário
  */
-public class MainController implements Controller{
+public class MainController{
 
-    public void tocar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2, int bpm) {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+    public void pausar(DrumTab drum, CordaTab bass, CordaTab g1, CordaTab g2, int bpm) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void pausar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2, int bpm) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void parar(DrumTab drum, CordaTab bass, CordaTab g1, CordaTab g2, int bpm) {
+  //      throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void parar(DrumTab drum, BassTab bass, Guitar1Tab g1, Guitar2Tab g2, int bpm) {
-
+    public void tocar(DrumTab drum, CordaTab bass, CordaTab g1, CordaTab g2, int bpm) {
+    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
