@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuário/Desktop/Programação/Java/TPES/src/tpes/TPES.java</file>
-            <file>file:/C:/Users/Usuário/Desktop/Programação/Java/TPES/src/tpes/GUI1.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/Model/Model/NotasBaixo.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/Controller/BassController.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/Main/TPES.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/Model/Model/Nota.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/View/MainView.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/Model/Model/Levada.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/Model/Persistencia/Persistencia.java</file>
+            <file>file:/home/bernardo/github/Musiquality/src/View/DrumTab.java</file>
         </group>
     </open-files>
 </project-private>
