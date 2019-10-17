@@ -10,6 +10,7 @@ import Exceptions.SystemException;
 import Main.Util;
 import Model.Model.Levada;
 import Model.Model.Notas;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JCheckBox;
@@ -36,8 +37,12 @@ public class CordaController{
             l[i]=new Levada(n);
     }
 
-    public String[] getNomes(){
-        return n.getNomes();
+    public String[] getNomes(int oitava){
+        String [] nomes=n.getNomes();
+        String[] aux=new String[12];
+        for(int i=0;i<aux.length;i++)
+            aux[i]=nomes[i+12*oitava];
+        return aux;
     }
 
     public int getQtd() {
@@ -65,12 +70,19 @@ public class CordaController{
          
     }
 
-    public int load(int k,JLabel[] notes, JCheckBox[][] tempo) {
+    public int load(int k,JLabel[] notes, JLabel[][] tempo,Color bg, Color selected) {
         for(int i=0;i<tempo.length;i++){
             String nome=notes[i].getText();
             for(int j=0;j<tempo[i].length;j++){
-                tempo[i][j].setSelected(l[k].contains(nome,j));
-            }
+                if(j>=l[k].getTamanho())
+                    tempo[i][j].setBackground(Color.BLACK);
+                else{
+                    if(l[k].contains(nome, j))
+                        tempo[i][j].setBackground(selected);
+                    else
+                        tempo[i][j].setBackground(bg);
+                    }
+                }
         }
         return l[k].getTamanho();
     }

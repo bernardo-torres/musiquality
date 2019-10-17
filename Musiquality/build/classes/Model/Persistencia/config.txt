@@ -10,17 +10,189 @@ Tom Mid, t2.wav
 Tom Low, t3.wav
 ;
 Baixo 
-C1, C1.wav
-C2, C2.wav
-C3, C#3.wav
-C4, C4.wav
-C5, C5.wav
-C6, C6.wav
-C7, C&.wav
-C8, C8.wav
-C9, C9.wav
+C2, C1.wav
+C#2, c#2.wav
+D2, C2.wav
+D#2,D.WAV
+E2, C#3.wav
+F2, C4.wav
+F#2,F2.WAV
+G2, C5.wav
+G#2,G2.WAV
+A2, C6.wav
+A#2, A#2.WAV
+B2, C&.wav
+C3, C1.wav
+C#3, c#2.wav
+D3, C2.wav
+D#3,D.WAV
+E3, C#3.wav
+F3, C4.wav
+F#3,F2.WAV
+G3, C5.wav
+G#3,G2.WAV
+A3, C6.wav
+A#3, A#2.WAV
+B3, C&.wav
+C4, C1.wav
+C#4, c#2.wav
+D4, C2.wav
+D#4,D.WAV
+E4, C#3.wav
+F4, C4.wav
+F#4,F2.WAV
+G4, C5.wav
+G#4,G2.WAV
+A4, C6.wav
+A#4, A#2.WAV
+B4, C&.wav
+C5, C1.wav
+C#5, c#2.wav
+D5, C2.wav
+D#5,D.WAV
+E5, C#3.wav
+F5, C4.wav
+F#5,F2.WAV
+G5, C5.wav
+G#5,G2.WAV
+A5, C6.wav
+A#5, A#2.WAV
+B5, C&.wav
+C6, C1.wav
+C#6, c#2.wav
+D6, C2.wav
+D#6,D.WAV
+E6, C#3.wav
+F6, C4.wav
+F#6,F2.WAV
+G6, C5.wav
+G#6,G2.WAV
+A6, C6.wav
+A#6, A#2.WAV
+B6, C&.wav
 ;
 Guitarra 1
+C3, C1.wav
+C#3, c#2.wav
+D3, C2.wav
+D#3,D.WAV
+E3, C#3.wav
+F3, C4.wav
+F#3,F2.WAV
+G3, C5.wav
+G#3,G2.WAV
+A3, C6.wav
+A#3, A#2.WAV
+B3, C&.wav
+C4, C1.wav
+C#4, c#2.wav
+D4, C2.wav
+D#4,D.WAV
+E4, C#3.wav
+F4, C4.wav
+F#4,F2.WAV
+G4, C5.wav
+G#4,G2.WAV
+A4, C6.wav
+A#4, A#2.WAV
+B4, C&.wav
+C5, C1.wav
+C#5, c#2.wav
+D5, C2.wav
+D#5,D.WAV
+E5, C#3.wav
+F5, C4.wav
+F#5,F2.WAV
+G5, C5.wav
+G#5,G2.WAV
+A5, C6.wav
+A#5, A#2.WAV
+B5, C&.wav
+C6, C1.wav
+C#6, c#2.wav
+D6, C2.wav
+D#6,D.WAV
+E6, C#3.wav
+F6, C4.wav
+F#6,F2.WAV
+G6, C5.wav
+G#6,G2.WAV
+A6, C6.wav
+A#6, A#2.WAV
+B6, C&.wav
+C7, C1.wav
+C#7, c#2.wav
+D7, C2.wav
+D#7,D.WAV
+E7, C#3.wav
+F7, C4.wav
+F#7,F2.WAV
+G7, C5.wav
+G#7,G2.WAV
+A7, C6.wav
+A#7, A#2.WAV
+B7, C&.wav
 ;
 Guitarra 2
+C3, C1.wav
+C#3, c#2.wav
+D3, C2.wav
+D#3,D.WAV
+E3, C#3.wav
+F3, C4.wav
+F#3,F2.WAV
+G3, C5.wav
+G#3,G2.WAV
+A3, C6.wav
+A#3, A#2.WAV
+B3, C&.wav
+C4, C1.wav
+C#4, c#2.wav
+D4, C2.wav
+D#4,D.WAV
+E4, C#3.wav
+F4, C4.wav
+F#4,F2.WAV
+G4, C5.wav
+G#4,G2.WAV
+A4, C6.wav
+A#4, A#2.WAV
+B4, C&.wav
+C5, C1.wav
+C#5, c#2.wav
+D5, C2.wav
+D#5,D.WAV
+E5, C#3.wav
+F5, C4.wav
+F#5,F2.WAV
+G5, C5.wav
+G#5,G2.WAV
+A5, C6.wav
+A#5, A#2.WAV
+B5, C&.wav
+C6, C1.wav
+C#6, c#2.wav
+D6, C2.wav
+D#6,D.WAV
+E6, C#3.wav
+F6, C4.wav
+F#6,F2.WAV
+G6, C5.wav
+G#6,G2.WAV
+A6, C6.wav
+A#6, A#2.WAV
+B6, C&.wav
+C7, C1.wav
+C#7, c#2.wav
+D7, C2.wav
+D#7,D.WAV
+E7, C#3.wav
+F7, C4.wav
+F#7,F2.WAV
+G7, C5.wav
+G#7,G2.WAV
+A7, C6.wav
+A#7, A#2.WAV
+B7, C&.wav
+
 ;

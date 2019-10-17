@@ -10,11 +10,10 @@ import Exceptions.SystemException;
 import Main.Util;
 import Model.Model.Levada;
 import Model.Model.Notas;
-import Model.Model.Notas;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 
 /**
@@ -64,12 +63,19 @@ public class DrumController{
          
     }
 
-    public int load(int l,JLabel[] notes, JCheckBox[][] tempo) {
+    public int load(int l,JLabel[] notes, JLabel[][] tempo,Color bg, Color selected) {
         for(int i=0;i<tempo.length;i++){
             String nome=notes[i].getText();
             for(int j=0;j<tempo[i].length;j++){
-                tempo[i][j].setSelected(levada[l].contains(nome,j));
-            }
+                if(j>=levada[l].getTamanho())
+                    tempo[i][j].setBackground(Color.BLACK);
+                else{
+                    if(levada[l].contains(nome, j))
+                        tempo[i][j].setBackground(selected);
+                    else
+                        tempo[i][j].setBackground(bg);
+                    }
+                }
         }
         return levada[l].getTamanho();
     }
