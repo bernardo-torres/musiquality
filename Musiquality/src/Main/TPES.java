@@ -5,8 +5,8 @@
  */
 package Main;
 
+import Main.TestAudio;
 import View.MainView;
-
 /**
  *
  * @author Usuário
@@ -17,6 +17,8 @@ public class TPES {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        TestAudio a = new TestAudio();
         MainView g=new MainView();
         
     }
