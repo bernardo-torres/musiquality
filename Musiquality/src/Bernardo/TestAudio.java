@@ -30,7 +30,7 @@ public class TestAudio {
      public static Clip clip1;
      public static Clip clip2;
      public static Clip createdClip;
-     public static Persistencia per;
+     public Persistencia per;
      public static Nota nota;
      
      public TestAudio (){
@@ -64,9 +64,24 @@ public class TestAudio {
          catch(InterruptedException e){}
          nota.tocar();
          nota2.tocar();
-         try{Thread.sleep(200);}
+         try{Thread.sleep(100);}
          catch(InterruptedException e){}
          nota2.tocar();
+         try{Thread.sleep(100);}
+         catch(InterruptedException e){}
+         nota.tocar();
+         try{Thread.sleep(100);}
+         catch(InterruptedException e){}
+         nota.tocar();
+         try{Thread.sleep(100);}
+         catch(InterruptedException e){}
+         nota.tocar();
+         nota.tocar();
+         nota.tocar();
+         nota.tocar();
+         nota.tocar();
+         nota.tocar();
+         
          try{Thread.sleep(200);}
          catch(InterruptedException e){}
          

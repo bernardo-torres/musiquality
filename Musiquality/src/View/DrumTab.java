@@ -43,7 +43,7 @@ public class DrumTab {
     private JLabel[] rhythmList;
     
     private int selec;
-    private DrumController controller;
+    public DrumController controller;
     
     
     public DrumTab(Color bg, Color fg){

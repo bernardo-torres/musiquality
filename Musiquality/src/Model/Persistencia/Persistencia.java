@@ -8,6 +8,7 @@ package Model.Persistencia;
 import Model.Model.Nota;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -34,10 +35,22 @@ public class Persistencia{
     private Nota[] guitarra1;
     private Nota[] guitarra2;
     
+    // Tabela hash para armazenar relacao nome da nota com posicao no vetor de notas
+    public Hashtable<String, Integer> guitar1Hash;
+    public Hashtable<String, Integer> guitar2Hash;
+    public Hashtable<String, Integer> bateriaHash;
+    public Hashtable<String, Integer> baixoHash;
+    
     private Persistencia(){
         this.urlCfg="src/Model/Persistencia/config.txt";
         String separator="\\s*,\\s*";
         String lineSeparator="\\s*"+System.getProperty("line.separator");
+        
+        
+        guitar1Hash = new Hashtable<>();
+        guitar2Hash = new Hashtable<>();
+        bateriaHash = new Hashtable<>();
+        baixoHash = new Hashtable<>();
         
         try {
             input=new Scanner(Paths.get(urlCfg));
@@ -89,12 +102,17 @@ public class Persistencia{
     private void setNotasBateria(){
         aux.clear();
         String token=input.next();
+        int i = 0;
         while(!";".equals(token)){
             String nome=token;
             token=input.next();
             String url=token;
             Nota n=new Nota(nome,url);
             aux.add(n);
+                  
+            bateriaHash.put(nome, i);
+            i++;
+            
             token=input.next();
         }
         bateria=new Nota[aux.size()];
@@ -104,12 +122,17 @@ public class Persistencia{
     private void setNotasG1(){
         aux.clear();
         String token=input.next();
+        int i = 0;
         while(!";".equals(token)){
             String nome=token;
             token=input.next();
             String url=token;
             Nota n=new Nota(nome,url);
             aux.add(n);
+                  
+            guitar1Hash.put(nome, i);
+            i++;
+            
             token=input.next();
         }
         guitarra1=new Nota[aux.size()];
@@ -118,12 +141,17 @@ public class Persistencia{
     private void setNotasG2(){
         aux.clear();
         String token=input.next();
+        int i = 0;
         while(!";".equals(token)){
             String nome=token;
             token=input.next();
             String url=token;
             Nota n=new Nota(nome,url);
             aux.add(n);
+            
+            guitar2Hash.put(nome, i);
+            i++;
+            
             token=input.next();
         }
         guitarra2=new Nota[aux.size()];
@@ -132,12 +160,17 @@ public class Persistencia{
     private void setNotasBass(){
         aux.clear();
         String token=input.next();
+        int i = 0;
         while(!";".equals(token)){
             String nome=token;
             token=input.next();
             String url=token;
             Nota n=new Nota(nome,url);
             aux.add(n);
+                  
+            baixoHash.put(nome, i);
+            i++;
+            
             token=input.next();
         }
         baixo=new Nota[aux.size()];

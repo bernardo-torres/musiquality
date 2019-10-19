@@ -43,7 +43,7 @@ public class MainView {
     
     private int bpm;
     private MainController controller;
-    private DrumTab drum;
+    public DrumTab drum;
     private CordaTab bass,g1,g2;
     ImageIcon iconTocar,iconPausar,iconParar;
     ImageIcon iconTocar1,iconPausar1,iconParar1;

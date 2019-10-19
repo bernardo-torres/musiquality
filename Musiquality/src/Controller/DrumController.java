@@ -22,7 +22,7 @@ import javax.swing.JLabel;
  */
 public class DrumController{
     private Notas bateria;
-    private Levada[] levada;
+    public Levada[] levada;
     public DrumController(){
         try {
             bateria=new Notas(Util.DRUM);

@@ -12,14 +12,16 @@ import View.MainView;
  * @author Usuário
  */
 public class TPES {
-
+    public static MainView g;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        TestAudio a = new TestAudio();
-        MainView g=new MainView();
+
+        //MainView g=new MainView();
+        
+        g=new MainView();
         
     }
     

@@ -5,7 +5,6 @@
  */
 package Model.Model;
 
-import Bernardo.TestAudio;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;

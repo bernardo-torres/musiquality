@@ -7,6 +7,7 @@ package Model.Model;
 
 import Exceptions.ModelException;
 import Exceptions.SystemException;
+import Model.Persistencia.Persistencia;
 import java.util.LinkedList;
 
 /**
@@ -28,6 +29,7 @@ public class Levada{
     private final Notas n;
     private int tam;
     private int bpm;
+    public Persistencia per;
     
     /*
     O Dashboard é uma variável responsável por definir as notas que serão tocadas;
@@ -43,6 +45,7 @@ public class Levada{
         this.n = n;
         this.bpm=0;
         this.tam=16;
+        per = Persistencia.getPersistencia();
         dashboard = new LinkedList[tam];
         for(int i = 0;i<dashboard.length;i++){
             dashboard[i] = new LinkedList<>();
@@ -115,5 +118,29 @@ public class Levada{
 
     public boolean contains(String nome, int j) {
         return dashboard[j].contains(nome);
+    }
+    
+    public void playLevada(){
+        int tempo;
+        for(tempo=0; tempo<16; tempo++){
+            playLinkedList(dashboard[tempo]);
+            bpmDelay();
+        }
+    }
+    
+    private void bpmDelay(){
+        try{Thread.sleep(200);}
+        catch(InterruptedException e){}
+    }
+    // Itera na lista do tempo e toca todas as notas
+    public void playLinkedList(LinkedList l){
+        int notePosition;
+        Nota nota;
+        for(int i=0;i<l.size();i++){
+            notePosition = per.bateriaHash.get(l.get(i));
+            nota = per.getBateria()[notePosition];
+            nota.tocar();
+            System.out.print("Pegou nota "+ l.get(i) +", posicao " + notePosition + "\n");
+        }
     }
 }
