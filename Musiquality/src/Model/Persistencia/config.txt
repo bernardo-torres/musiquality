@@ -1,198 +1,198 @@
 Bateria
-Kick,kick.wav
-Snare, snare.wav
-Open HH ,  OpenHH.wav  
-Closed HH , ClosedHH.wav
-Ride,ride.wav
-Crash,crash.wav
-Tom Hi, t1.wav
-Tom Mid, t2.wav
-Tom Low, t3.wav
+Kick, /Sounds/Bateria/Bumbo.wav
+Snare, /Sounds/Bateria/Caixa.wav
+Open HH ,  /Sounds/Bateria/Ride.wav  
+Closed HH , /Sounds/Bateria/Chimbal.wav
+Ride, nofile
+Crash,/Sounds/Bateria/Prato.wav
+Tom Hi, /Sounds/Bateria/Tom.wav
+Tom Mid, nofile
+Tom Low, nofile
 ;
 Baixo 
-C2, C1.wav
-C#2, c#2.wav
-D2, C2.wav
-D#2,D.WAV
-E2, C#3.wav
-F2, C4.wav
-F#2,F2.WAV
-G2, C5.wav
-G#2,G2.WAV
-A2, C6.wav
-A#2, A#2.WAV
-B2, C&.wav
-C3, C1.wav
-C#3, c#2.wav
-D3, C2.wav
-D#3,D.WAV
-E3, C#3.wav
-F3, C4.wav
-F#3,F2.WAV
-G3, C5.wav
-G#3,G2.WAV
-A3, C6.wav
-A#3, A#2.WAV
-B3, C&.wav
-C4, C1.wav
-C#4, c#2.wav
-D4, C2.wav
-D#4,D.WAV
-E4, C#3.wav
-F4, C4.wav
-F#4,F2.WAV
-G4, C5.wav
-G#4,G2.WAV
-A4, C6.wav
-A#4, A#2.WAV
-B4, C&.wav
-C5, C1.wav
-C#5, c#2.wav
-D5, C2.wav
-D#5,D.WAV
-E5, C#3.wav
-F5, C4.wav
-F#5,F2.WAV
-G5, C5.wav
-G#5,G2.WAV
-A5, C6.wav
-A#5, A#2.WAV
-B5, C&.wav
-C6, C1.wav
-C#6, c#2.wav
-D6, C2.wav
-D#6,D.WAV
-E6, C#3.wav
-F6, C4.wav
-F#6,F2.WAV
-G6, C5.wav
-G#6,G2.WAV
-A6, C6.wav
-A#6, A#2.WAV
-B6, C&.wav
+C2, /Sounds/Baixo/C2.wav
+C#2, /Sounds/Baixo/Cs2.wav
+D2, /Sounds/Baixo/D2.wav
+D#2,/Sounds/Baixo/Ds2.WAV
+E2, /Sounds/Baixo/E2.wav
+F2, /Sounds/Baixo/F2.wav
+F#2,/Sounds/Baixo/Fs2.WAV
+G2, /Sounds/Baixo/G2.wav
+G#2,/Sounds/Baixo/Gs2.WAV
+A2, /Sounds/Baixo/A2.wav
+A#2, /Sounds/Baixo/As2.WAV
+B2, /Sounds/Baixo/B2.wav
+C3, /Sounds/Baixo/C3.wav
+C#3, /Sounds/Baixo/Cs3.wav
+D3, /Sounds/Baixo/D3.wav
+D#3, /Sounds/Baixo/Ds3.WAV
+E3, nofile
+F3, nofile
+F#3, nofile
+G3, nofile
+G#3, nofile
+A3, nofile
+A#3, nofile
+B3, nofile
+C4, nofile
+C#4, nofile
+D4, nofile
+D#4, nofile
+E4, nofile
+F4, nofile
+F#4, nofile
+G4, nofile
+G#4, nofile
+A4, nofile
+A#4, nofile
+B4, nofile
+C5, nofile
+C#5, nofile
+D5, nofile
+D#5, nofile
+E5, nofile
+F5, nofile
+F#5, nofile
+G5, nofile
+G#5, nofile
+A5, nofile
+A#5, nofile
+B5, nofile
+C6, nofile
+C#6, nofile
+D6, nofile
+D#6, nofile
+E6, nofile
+F6, nofile
+F#6, nofile
+G6, nofile
+G#6, nofile
+A6, nofile
+A#6, nofile
+B6, nofile
 ;
 Guitarra 1
-C3, C1.wav
-C#3, c#2.wav
-D3, C2.wav
-D#3,D.WAV
-E3, C#3.wav
-F3, C4.wav
-F#3,F2.WAV
-G3, C5.wav
-G#3,G2.WAV
-A3, C6.wav
-A#3, A#2.WAV
-B3, C&.wav
-C4, C1.wav
-C#4, c#2.wav
-D4, C2.wav
-D#4,D.WAV
-E4, C#3.wav
-F4, C4.wav
-F#4,F2.WAV
-G4, C5.wav
-G#4,G2.WAV
-A4, C6.wav
-A#4, A#2.WAV
-B4, C&.wav
-C5, C1.wav
-C#5, c#2.wav
-D5, C2.wav
-D#5,D.WAV
-E5, C#3.wav
-F5, C4.wav
-F#5,F2.WAV
-G5, C5.wav
-G#5,G2.WAV
-A5, C6.wav
-A#5, A#2.WAV
-B5, C&.wav
-C6, C1.wav
-C#6, c#2.wav
-D6, C2.wav
-D#6,D.WAV
-E6, C#3.wav
-F6, C4.wav
-F#6,F2.WAV
-G6, C5.wav
-G#6,G2.WAV
-A6, C6.wav
-A#6, A#2.WAV
-B6, C&.wav
-C7, C1.wav
-C#7, c#2.wav
-D7, C2.wav
-D#7,D.WAV
-E7, C#3.wav
-F7, C4.wav
-F#7,F2.WAV
-G7, C5.wav
-G#7,G2.WAV
-A7, C6.wav
-A#7, A#2.WAV
-B7, C&.wav
+C3, nofile
+C#3, nofile
+D3, nofile
+D#3, nofile
+E3, /Sounds/Guitarra/E3.wav
+F3, /Sounds/Guitarra/F3.wav
+F#3, /Sounds/Guitarra/Fs3.WAV
+G3, /Sounds/Guitarra/G3.wav
+G#3, /Sounds/Guitarra/Gs3.WAV
+A3, /Sounds/Guitarra/A3.wav
+A#3, /Sounds/Guitarra/As3.WAV
+B3, /Sounds/Guitarra/B3.wav
+C4, /Sounds/Guitarra/C4.wav
+C#4, /Sounds/Guitarra/Cs4.wav
+D4, /Sounds/Guitarra/D4.wav
+D#4, /Sounds/Guitarra/Ds4.WAV
+E4, /Sounds/Guitarra/E4.wav
+F4, /Sounds/Guitarra/F4.wav
+F#4, /Sounds/Guitarra/Fs4.WAV
+G4, /Sounds/Guitarra/G4.wav
+G#4, /Sounds/Guitarra/Gs4.WAV
+A4, /Sounds/Guitarra/A4.wav
+A#4, /Sounds/Guitarra/As4.WAV
+B4, /Sounds/Guitarra/B4.wav
+C5, /Sounds/Guitarra/C5.wav
+C#5, /Sounds/Guitarra/Cs5.wav
+D5, /Sounds/Guitarra/D5.wav
+D#5, /Sounds/Guitarra/Ds5.WAV
+E5, nofile
+F5, nofile
+F#5, nofile
+G5, nofile
+G#5, nofile
+A5, nofile
+A#5, nofile
+B5, nofile
+C6, nofile
+C#6, nofile
+D6, nofile
+D#6, nofile
+E6, nofile
+F6, nofile
+F#6, nofile
+G6, nofile
+G#6, nofile
+A6, nofile
+A#6, nofile
+B6, nofile
+C7, nofile
+C#7, nofile
+D7, nofile
+D#7, nofile
+E7, nofile
+F7, nofile
+F#7, nofile
+G7, nofile
+G#7, nofile
+A7, nofile
+A#7, nofile
+B7, nofile
 ;
 Guitarra 2
-C3, C1.wav
-C#3, c#2.wav
-D3, C2.wav
-D#3,D.WAV
-E3, C#3.wav
-F3, C4.wav
-F#3,F2.WAV
-G3, C5.wav
-G#3,G2.WAV
-A3, C6.wav
-A#3, A#2.WAV
-B3, C&.wav
-C4, C1.wav
-C#4, c#2.wav
-D4, C2.wav
-D#4,D.WAV
-E4, C#3.wav
-F4, C4.wav
-F#4,F2.WAV
-G4, C5.wav
-G#4,G2.WAV
-A4, C6.wav
-A#4, A#2.WAV
-B4, C&.wav
-C5, C1.wav
-C#5, c#2.wav
-D5, C2.wav
-D#5,D.WAV
-E5, C#3.wav
-F5, C4.wav
-F#5,F2.WAV
-G5, C5.wav
-G#5,G2.WAV
-A5, C6.wav
-A#5, A#2.WAV
-B5, C&.wav
-C6, C1.wav
-C#6, c#2.wav
-D6, C2.wav
-D#6,D.WAV
-E6, C#3.wav
-F6, C4.wav
-F#6,F2.WAV
-G6, C5.wav
-G#6,G2.WAV
-A6, C6.wav
-A#6, A#2.WAV
-B6, C&.wav
-C7, C1.wav
-C#7, c#2.wav
-D7, C2.wav
-D#7,D.WAV
-E7, C#3.wav
-F7, C4.wav
-F#7,F2.WAV
-G7, C5.wav
-G#7,G2.WAV
-A7, C6.wav
-A#7, A#2.WAV
-B7, C&.wav
+C3, nofile
+C#3, nofile
+D3, nofile
+D#3, nofile
+E3, /Sounds/Guitarra/E3.wav
+F3, /Sounds/Guitarra/F3.wav
+F#3, /Sounds/Guitarra/Fs3.WAV
+G3, /Sounds/Guitarra/G3.wav
+G#3, /Sounds/Guitarra/Gs3.WAV
+A3, /Sounds/Guitarra/A3.wav
+A#3, /Sounds/Guitarra/As3.WAV
+B3, /Sounds/Guitarra/B3.wav
+C4, /Sounds/Guitarra/C4.wav
+C#4, /Sounds/Guitarra/Cs4.wav
+D4, /Sounds/Guitarra/D4.wav
+D#4, /Sounds/Guitarra/Ds4.WAV
+E4, /Sounds/Guitarra/E4.wav
+F4, /Sounds/Guitarra/F4.wav
+F#4, /Sounds/Guitarra/Fs4.WAV
+G4, /Sounds/Guitarra/G4.wav
+G#4, /Sounds/Guitarra/Gs4.WAV
+A4, /Sounds/Guitarra/A4.wav
+A#4, /Sounds/Guitarra/As4.WAV
+B4, /Sounds/Guitarra/B4.wav
+C5, /Sounds/Guitarra/C5.wav
+C#5, /Sounds/Guitarra/Cs5.wav
+D5, /Sounds/Guitarra/D5.wav
+D#5, /Sounds/Guitarra/Ds5.WAV
+E5, nofile
+F5, nofile
+F#5, nofile
+G5, nofile
+G#5, nofile
+A5, nofile
+A#5, nofile
+B5, nofile
+C6, nofile
+C#6, nofile
+D6, nofile
+D#6, nofile
+E6, nofile
+F6, nofile
+F#6, nofile
+G6, nofile
+G#6, nofile
+A6, nofile
+A#6, nofile
+B6, nofile
+C7, nofile
+C#7, nofile
+D7, nofile
+D#7, nofile
+E7, nofile
+F7, nofile
+F#7, nofile
+G7, nofile
+G#7, nofile
+A7, nofile
+A#7, nofile
+B7, nofile
 
 ;
