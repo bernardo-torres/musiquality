@@ -43,7 +43,7 @@ public class Levada{
     
     public Levada(Notas n){
         this.n = n;
-        this.bpm=0;
+        this.bpm=100;
         this.tam=16;
         per = Persistencia.getPersistencia();
         dashboard = new LinkedList[tam];
@@ -122,14 +122,21 @@ public class Levada{
     
     public void playLevada(){
         int tempo;
+        float wait = 1000*15/bpm;
+        int waitTime = (int)wait;
+        System.out.println(wait);
+        System.out.print("Comecando a tocar em "+ bpm +" bpm\n");
         for(tempo=0; tempo<16; tempo++){
             playLinkedList(dashboard[tempo]);
-            bpmDelay();
+            bpmDelay(waitTime);
         }
     }
     
-    private void bpmDelay(){
-        try{Thread.sleep(200);}
+    private void bpmDelay(int waitTime){
+        waitTime = (int)waitTime;
+        // Calcula em ms o tempo de espera ente um tempo e outro
+        // Cada compasso sao 4 batidas, logo cada tempo tem 1/4 do tempo da batida
+        try{Thread.sleep(waitTime);}
         catch(InterruptedException e){}
     }
     // Itera na lista do tempo e toca todas as notas

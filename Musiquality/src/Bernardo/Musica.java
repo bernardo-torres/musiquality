@@ -16,6 +16,7 @@ public class Musica {
     
     // Ta tocando isso quando aperta o play
     public static void playMusica(){
+        TPES.g.drum.controller.levada[0].setBpm(150);
         TPES.g.drum.controller.levada[0].playLevada();
         
         // Audio de teste
