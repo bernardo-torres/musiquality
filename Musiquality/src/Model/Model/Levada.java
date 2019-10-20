@@ -41,7 +41,7 @@ public class Levada{
     
     */
     
-    private LinkedList<String>[] dashboard;
+    public LinkedList<String>[] dashboard;
     
     public Levada(Notas n){
         this.n = n;
@@ -122,6 +122,7 @@ public class Levada{
         return dashboard[j].contains(nome);
     }
     
+    // Funcao toca uma levada só. Utilizar somente para teste
     public void playLevada(){
         int tempo;
         float wait = 1000*15/bpm;
@@ -141,9 +142,8 @@ public class Levada{
         try{Thread.sleep(waitTime);}
         catch(InterruptedException e){}
     }
+    
     // Itera na lista do tempo e toca todas as notas
-    // Tem que dar um jeito de descobrir qual tab ta chamando ela, pra poder usar a tabela 
-    // hash certa e chamar a funcao get certa
     public void playLinkedList(LinkedList l){
         int notePosition;
         Nota nota;

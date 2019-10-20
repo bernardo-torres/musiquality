@@ -8,7 +8,6 @@ package Model.Persistencia;
 import Model.Model.Nota;
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;

@@ -7,6 +7,7 @@ package Bernardo;
 
 import Bernardo.TestAudio;
 import Main.TPES;
+import Model.Model.Levada;
 
 /**
  *
@@ -14,21 +15,53 @@ import Main.TPES;
  */
 public class Musica {
     
+    public static int bpm;
+    public static int tocando;
+    
     // Ta tocando isso quando aperta o play
     public static void playMusica(){
-        TPES.g.drum.controller.levada[0].setBpm(150);
-        TPES.g.drum.controller.levada[0].playLevada();
-        
-        TPES.g.g1.controller.l[0].setBpm(150);
-        TPES.g.g1.controller.l[0].playLevada();
-        
-        //TPES.g.bass.controller.l[0].setBpm(150);
-       // TPES.g.bass.controller.l[0].playLevada();
-        
-        /*TPES.g.g2.controller.l[0].setBpm(150);
-        TPES.g.g2.controller.l[0].playLevada();*/
-        
-        // Audio de teste
-        // TestAudio a = new TestAudio();
+       if (tocando == 0){
+            playLevadas();
+       }
     }
+    /* Toca os tempos 0 de todas as levadas de todos os instrumentos, depois toca os
+    tempos 1, 2, etc.. */
+    public static void playLevadas(){
+        tocando = 1;
+        bpm = 100;
+        int tempo, levadaCnt;
+        float wait = 1000*15/bpm;  // tempo de espera entre 2 tempos
+        int waitTime = (int)wait;
+        System.out.print("Comecando a tocar em "+ bpm +" bpm\n");
+        Levada aux;
+        for(tempo=0; tempo<16; tempo++){
+            for(levadaCnt = 0;levadaCnt<10;levadaCnt++){
+                aux =  TPES.g.drum.controller.levada[levadaCnt];
+                aux.setBpm(150);
+                aux.playLinkedList(aux.dashboard[tempo]);
+
+                aux =  TPES.g.g1.controller.l[levadaCnt];
+                aux.setBpm(150);
+                aux.playLinkedList(aux.dashboard[tempo]);
+
+                aux =  TPES.g.g2.controller.l[levadaCnt];
+                aux.setBpm(150);
+                aux.playLinkedList(aux.dashboard[tempo]);
+
+                aux =  TPES.g.bass.controller.l[levadaCnt];
+                aux.setBpm(150);
+                aux.playLinkedList(aux.dashboard[tempo]);
+            }     
+            bpmDelay(waitTime);
+        }
+        tocando = 0;
+    }    
+    private static void bpmDelay(int waitTime){
+        waitTime = (int)waitTime;
+        // Calcula em ms o tempo de espera ente um tempo e outro
+        // Cada compasso sao 4 batidas, logo cada tempo tem 1/4 do tempo da batida
+        try{Thread.sleep(waitTime);}
+        catch(InterruptedException e){}
+    }    
+    
 }
