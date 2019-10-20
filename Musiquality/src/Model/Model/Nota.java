@@ -49,7 +49,7 @@ public class Nota {
     //Define a URL da nota. Se ela for inválida, lança exceção
     public void tocar(){
         if (clip == null){
-            System.out.print("Imposivel tocar nota " + nome + "\n");
+            System.out.print("Imposivel tocar nota " + nome + " , clip nao foi inicializado\n");
         }
         else{
             playClip(); 

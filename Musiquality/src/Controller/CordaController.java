@@ -22,7 +22,7 @@ import javax.swing.JLabel;
  */
 public class CordaController{
     private Notas n;
-    private Levada[] l;
+    public Levada[] l;
     private final int NUM_LEVADAS;
     public CordaController(int tipo){
         try {

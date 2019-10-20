@@ -9,6 +9,8 @@ import Exceptions.ModelException;
 import Exceptions.SystemException;
 import Model.Persistencia.Persistencia;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -140,14 +142,24 @@ public class Levada{
         catch(InterruptedException e){}
     }
     // Itera na lista do tempo e toca todas as notas
+    // Tem que dar um jeito de descobrir qual tab ta chamando ela, pra poder usar a tabela 
+    // hash certa e chamar a funcao get certa
     public void playLinkedList(LinkedList l){
         int notePosition;
         Nota nota;
+        String nome;
         for(int i=0;i<l.size();i++){
-            notePosition = per.bateriaHash.get(l.get(i));
-            nota = per.getBateria()[notePosition];
-            nota.tocar();
-            System.out.print("Pegou nota "+ l.get(i) +", posicao " + notePosition + "\n");
+            //notePosition = per.bateriaHash.get(l.get(i));
+            nome = (String) l.get(i);
+            try {
+                notePosition = this.n.getIndiceNota(nome);
+                nota = this.n.notas[notePosition];
+                nota.tocar();
+                System.out.print("Pegou nota "+ l.get(i) +", posicao " + notePosition + "\n");
+            } catch (ModelException ex) {
+                Logger.getLogger(Levada.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
         }
     }
 }

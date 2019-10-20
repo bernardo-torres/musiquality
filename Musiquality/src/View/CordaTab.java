@@ -43,7 +43,7 @@ public class CordaTab {
     
     private final int TIPO;
     private int selec;//Levada selecionada
-    private CordaController controller;
+    public CordaController controller;
     
     public CordaTab(int tipo, Color bg, Color fg){
         this.bg=bg;

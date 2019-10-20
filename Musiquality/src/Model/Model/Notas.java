@@ -16,7 +16,7 @@ import Model.Persistencia.Persistencia;
  */
 public class Notas{
     private final Persistencia p;
-    private final Nota[] notas;
+    public Nota[] notas;
     public Notas(int tipo) throws ModelException{
         this.p = Persistencia.getPersistencia();
         switch(tipo){

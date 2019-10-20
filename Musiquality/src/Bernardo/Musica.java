@@ -19,6 +19,15 @@ public class Musica {
         TPES.g.drum.controller.levada[0].setBpm(150);
         TPES.g.drum.controller.levada[0].playLevada();
         
+        TPES.g.g1.controller.l[0].setBpm(150);
+        TPES.g.g1.controller.l[0].playLevada();
+        
+        //TPES.g.bass.controller.l[0].setBpm(150);
+       // TPES.g.bass.controller.l[0].playLevada();
+        
+        /*TPES.g.g2.controller.l[0].setBpm(150);
+        TPES.g.g2.controller.l[0].playLevada();*/
+        
         // Audio de teste
         // TestAudio a = new TestAudio();
     }
