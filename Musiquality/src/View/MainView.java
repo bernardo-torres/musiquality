@@ -46,9 +46,7 @@ public class MainView {
     public DrumTab drum;
     public CordaTab bass,g1,g2;
     ImageIcon iconTocar,iconPausar,iconParar;
-    ImageIcon iconTocar1,iconPausar1,iconParar1;
-    
-    
+        
     public MainView (){
         controller = new MainController();
         bg=new Color(255,255,255);
@@ -57,9 +55,6 @@ public class MainView {
         iconTocar=new ImageIcon("src/Icons/png/play.png");
         iconPausar=new ImageIcon("src/Icons/png/pause.png");
         iconParar=new ImageIcon("src/Icons/png/stop.png");
-        iconTocar1=new ImageIcon("src/Icons/png/play(1).png");
-        iconPausar1=new ImageIcon("src/Icons/png/pause(1).png");
-        //iconParar=new ImageIcon("src/Icons/png/stop.png");
         mainFrame = new JFrame("Musiquality");
         mainFrame.setBackground(bg);
         mainFrame.setLayout(new BorderLayout());
@@ -91,7 +86,6 @@ public class MainView {
         
         tocar = new JLabel();
         tocar.setIcon(iconTocar);
-        //tocar.setPreferredSize(new Dimension(150,150));
         pausar = new JLabel (iconPausar);
         parar = new JLabel(iconParar);
         
@@ -135,11 +129,11 @@ public class MainView {
             @Override
             public void mouseClicked(MouseEvent e) {controller.tocar(drum,bass,g1,g2,bpm);}
             @Override
-            public void mousePressed(MouseEvent e) {tocar.setIcon(iconTocar1);}
+            public void mousePressed(MouseEvent e) {}
             @Override
             public void mouseReleased(MouseEvent e) {tocar.setIcon(iconTocar);}
             @Override
-            public void mouseEntered(MouseEvent e) {tocar.setIcon(iconTocar1);}
+            public void mouseEntered(MouseEvent e) {}
             @Override
             public void mouseExited(MouseEvent e) {tocar.setIcon(iconTocar);}
         });

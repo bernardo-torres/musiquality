@@ -163,6 +163,10 @@ public class DrumTab {
     
     private void setListeners() {
         LabelListener r=new LabelListener();
+        for(int i=0;i<rhythms.length;i++){
+            for(int j=0;j<rhythms[i].length;j++)
+                rhythms[i][j].addMouseListener(r);
+        }
         for(int i=0;i<rhythmList.length;i++)
             rhythmList[i].addMouseListener(r);
         
@@ -226,7 +230,20 @@ public class DrumTab {
                     }
                 }
             }
-            
+         
+            for(int i=0;i<rhythms.length;i++){
+                for(int j=0;j<rhythms[i].length;j++){
+                    if(e.getSource()==rhythms[i][j]){
+                        //controller.switchNota(selec,notes[i].getText(),j);
+                        if(rhythms[i][j].getBackground().equals(bg))
+                            rhythms[i][j].setBackground(nota);
+                        else
+                            rhythms[i][j].setBackground(bg);
+                        
+                    }
+                }
+            }
+               
         }
 
         @Override

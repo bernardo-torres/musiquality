@@ -25,9 +25,7 @@ public class MainController{
     }
 
     public void tocar(DrumTab drum, CordaTab bass, CordaTab g1, CordaTab g2, int bpm) {
-    //    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    Musica.playMusica();
-           
+        Musica.playMusica(bpm);
     }
     
 }

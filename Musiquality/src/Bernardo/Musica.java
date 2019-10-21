@@ -15,20 +15,18 @@ import Model.Model.Levada;
  */
 public class Musica {
     
-    public static int bpm;
     public static int tocando;
     
     // Ta tocando isso quando aperta o play
-    public static void playMusica(){
+    public static void playMusica(int bpm){
        if (tocando == 0){
-            playLevadas();
+            playLevadas(bpm);
        }
     }
     /* Toca os tempos 0 de todas as levadas de todos os instrumentos, depois toca os
     tempos 1, 2, etc.. */
-    public static void playLevadas(){
+    public static void playLevadas(int bpm){
         tocando = 1;
-        bpm = 100;
         int tempo, levadaCnt;
         float wait = 1000*15/bpm;  // tempo de espera entre 2 tempos
         int waitTime = (int)wait;
