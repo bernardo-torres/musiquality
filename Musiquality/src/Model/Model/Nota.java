@@ -5,6 +5,7 @@
  */
 package Model.Model;
 
+import Exceptions.ModelException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -29,17 +30,17 @@ public class Nota {
     private Clip clip;
     //Mais variáveis devem ser adicionadas para representar o som da nota
     
-    public Nota(String nome, String myUrl) {
+    public Nota(String nome, String myUrl) throws ModelException {
         this.nome = nome;
         this.url = myUrl;
         // Testa se arquivo existe (nao é nofile). Se nao for, cria clipe com o url
-        if (Objects.equals(this.url, new String("nofile"))){
-            System.out.print("Tentou-se carregar nota " + nome + " que nao possui arquivo\n");
-            // this.clip = null;
-        }
-        else{
+        
             // System.out.print("URL = " + this.url+ "\n");
-           createClip(url);
+        try{
+            createClip(url);
+        }
+        catch(NullPointerException e){
+            throw new ModelException("A nota " + url + " não existe!");
         }
     }
     //Nome da nota
@@ -73,18 +74,19 @@ public class Nota {
      /**
  * play sound clip
  */
-    public void playClip() {
+    public boolean playClip() {
         if (clip != null) {
             try {
                 clip.stop();
                 clip.setFramePosition(0);
                 clip.start();
+                return true;
                 // System.out.println("Tocou?\n");
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            // System.out.println("Tocou ou nao carai\n");
         }
+        return false;
     }
 
 }

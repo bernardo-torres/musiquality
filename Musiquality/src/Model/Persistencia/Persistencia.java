@@ -5,11 +5,14 @@
  */
 package Model.Persistencia;
 
+import Exceptions.ModelException;
 import Model.Model.Nota;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -95,8 +98,14 @@ public class Persistencia{
             String nome=token;
             token=input.next();
             String url=token;
-            Nota n=new Nota(nome,url);
-            aux.add(n);
+            Nota n;
+            try {
+                n = new Nota(nome,url);
+                aux.add(n);
+            } catch (ModelException ex) {
+                Logger.getLogger(Persistencia.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
 
             token=input.next();
         }
@@ -112,8 +121,13 @@ public class Persistencia{
             String nome=token;
             token=input.next();
             String url=token;
-            Nota n=new Nota(nome,url);
-            aux.add(n);
+            Nota n;
+            try {
+                n = new Nota(nome,url);
+                aux.add(n);
+            } catch (ModelException ex) {
+                Logger.getLogger(Persistencia.class.getName()).log(Level.SEVERE, null, ex);
+            }
             token=input.next();
         }
         guitarra1=new Nota[aux.size()];
@@ -127,9 +141,14 @@ public class Persistencia{
             String nome=token;
             token=input.next();
             String url=token;
-            Nota n=new Nota(nome,url);
-            aux.add(n);
-           
+            Nota n;
+            try {
+                n = new Nota(nome,url);
+                aux.add(n);
+            } catch (ModelException ex) {
+                Logger.getLogger(Persistencia.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             
             token=input.next();
         }
@@ -144,8 +163,13 @@ public class Persistencia{
             String nome=token;
             token=input.next();
             String url=token;
-            Nota n=new Nota(nome,url);
-            aux.add(n);
+            Nota n;
+            try {
+                n = new Nota(nome,url);
+                aux.add(n);
+            } catch (ModelException ex) {
+                Logger.getLogger(Persistencia.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             token=input.next();
         }
