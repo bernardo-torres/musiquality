@@ -34,13 +34,18 @@ public class Nota {
         this.nome = nome;
         this.url = myUrl;
         // Testa se arquivo existe (nao é nofile). Se nao for, cria clipe com o url
-        
-            // System.out.print("URL = " + this.url+ "\n");
-        try{
-            createClip(url);
+        if (Objects.equals(this.url,"nofile")){
+            System.out.print("Tentou-se carregar nota " + nome + " que nao possui arquivo\n");
+            // this.clip = null;
         }
-        catch(NullPointerException e){
-            throw new ModelException("A nota " + url + " não existe!");
+        else{
+            // System.out.print("URL = " + this.url+ "\n");
+           try{
+            createClip(url);
+            }
+            catch(NullPointerException e){
+                throw new ModelException("A nota " + url + " não existe!");
+            }   
         }
     }
     //Nome da nota
@@ -48,18 +53,20 @@ public class Nota {
     // Endereço da nota no computado
     public String getURL(){return this.url;}
     //Define a URL da nota. Se ela for inválida, lança exceção
-    public void tocar(){
+    public boolean tocar(){
         if (clip == null){
             System.out.print("Imposivel tocar nota " + nome + " , clip nao foi inicializado\n");
+            return false;
         }
         else{
             playClip(); 
+            return true;
         }
         // Som.tocar(url);
     }
     
     // Cria um clip de musica com o URL do arquivo, fica armazenado na variavel clip.
-     public void createClip(String url) {
+     private void createClip(String url) {
         try{
             URL soundURL = Nota.class.getResource(url);
             System.out.println("Carregando arquivo "+ url);
@@ -70,23 +77,17 @@ public class Nota {
         catch(LineUnavailableException lue){lue.printStackTrace();}
         catch(UnsupportedAudioFileException uafe){uafe.printStackTrace();}
         catch(IOException ioe){ioe.printStackTrace();}
-    }
+     }
      /**
  * play sound clip
  */
-    public boolean playClip() {
-        if (clip != null) {
-            try {
-                clip.stop();
-                clip.setFramePosition(0);
-                clip.start();
-                return true;
-                // System.out.println("Tocou?\n");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    private void playClip() {
+        try {
+            clip.stop();
+            clip.setFramePosition(0);
+            clip.start();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return false;
     }
-
 }

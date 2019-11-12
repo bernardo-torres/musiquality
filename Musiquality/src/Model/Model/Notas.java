@@ -17,6 +17,7 @@ import Model.Persistencia.Persistencia;
 public class Notas{
     private final Persistencia p;
     public Nota[] notas;
+    
     public Notas(int tipo) throws ModelException{
         this.p = Persistencia.getPersistencia();
         switch(tipo){
@@ -69,17 +70,16 @@ public class Notas{
         return notas.length;
     }
 
-    public void tocar(int indice) throws SystemException {
+    public boolean tocar(int indice) throws SystemException {
         if(indice<0||indice>notas.length)
             throw new SystemException("Índice inválido!");
-        notas[indice].tocar();
+        return notas[indice].tocar();
     }
 
-    public void tocar(String nome) throws ModelException {
+    public boolean tocar(String nome) throws ModelException {
         for (Nota nota : notas) {
             if (nome.equals(nota.getNome())) {
-                nota.tocar();
-                return;
+                return nota.tocar();
             }
         }
         throw new ModelException("Essa nota não existe!");
@@ -91,4 +91,5 @@ public class Notas{
             nomes[i]=notas[i].getNome();
         return nomes;
     }
+    
 }
