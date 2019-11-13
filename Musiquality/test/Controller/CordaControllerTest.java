@@ -9,9 +9,12 @@ import Exceptions.ModelException;
 import Main.Util;
 import Model.Model.Levada;
 import Model.Model.Notas;
+import Model.Persistencia.Persistencia;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -63,7 +66,7 @@ public class CordaControllerTest {
     public void testGetQtd() {
         System.out.println("getQtd");
         CordaController instance = new CordaController(Util.BASS);
-        int expResult = 60; // 9 sons de baixo
+        int expResult = 60; // 12 sons de baixo, 5 oitavas
         int result = instance.getQtd();
         assertEquals(expResult, result);
     }
@@ -153,5 +156,18 @@ public class CordaControllerTest {
            assertEquals(tam, 11);
         
     }
+     
+    @Test
+    public void testInitLevada() {
+    	CordaController c = new CordaController(Util.BASS);
+    	assertEquals(c.l.length, 10);
+    }
+    
+    @Test
+    public void testInitNotas() {
+    	CordaController c = new CordaController(Util.GUITAR2);
+    	Assert.assertArrayEquals(c.n.notas, Persistencia.getPersistencia().getGuitarra2());
+    }
+    
     
 }

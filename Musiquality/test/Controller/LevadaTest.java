@@ -1,6 +1,7 @@
 package Controller;
 
 import Exceptions.ModelException;
+import Exceptions.SystemException;
 import Main.Util;
 import Model.Model.Levada;
 import Model.Model.Notas;
@@ -68,6 +69,42 @@ public class LevadaTest {
         boolean expResult = false;
         boolean result = instance.contains(nome, j);
         assertEquals(expResult, result);
+    }
+    
+    @Test (expected = SystemException.class)
+    public void testRemoveNota() throws SystemException, ModelException{
+    	Notas n = new Notas(Util.DRUM);
+    	Levada l = new Levada(n);
+    	l.removeNota(-1, "Kick");
+    }
+    
+    @Test (expected = SystemException.class)
+    public void testAddNota() throws SystemException, ModelException{
+    	Notas n = new Notas(Util.DRUM);
+    	Levada l = new Levada(n);
+    	l.addNota("Kick", 100);
+    }
+    
+    @Test (expected = SystemException.class)
+    public void testSwitchNota() throws SystemException, ModelException{
+    	Notas n = new Notas(Util.DRUM);
+    	Levada l = new Levada(n);
+    	l.switchNota("Kick", 100);
+    }
+    
+    @Test (expected = SystemException.class)
+    public void testSetTamanhoMax() throws SystemException, ModelException{
+    	Notas n = new Notas(Util.DRUM);
+    	Levada l = new Levada(n);
+    	l.setTamanhoMax(100);
+    }
+    
+    @Test
+    public void testSetBpm() throws ModelException{
+    	Notas n = new Notas(Util.DRUM);
+    	Levada l = new Levada(n);
+    	l.setBpm(100);
+    	assertEquals(l.getBpm(), 100);
     }
 
 }

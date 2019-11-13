@@ -10,9 +10,12 @@ import Exceptions.SystemException;
 import Main.Util;
 import Model.Model.Levada;
 import Model.Model.Notas;
+import Model.Persistencia.Persistencia;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -145,5 +148,17 @@ public class DrumControllerTest {
            assertEquals(tam, 11);
         
     }
+     
+     @Test
+     public void testInitLevada() {
+     	CordaController c = new CordaController(Util.DRUM);
+     	assertEquals(c.l.length, 10);
+     }
+     
+     @Test
+     public void testInitNotas() {
+     	CordaController c = new CordaController(Util.DRUM);
+     	Assert.assertArrayEquals(c.n.notas, Persistencia.getPersistencia().getBateria());
+     }
     
 }

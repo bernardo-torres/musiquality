@@ -21,7 +21,7 @@ import javax.swing.JLabel;
  * @author Usuário
  */
 public class CordaController{
-    private Notas n;
+    public Notas n;
     public Levada[] l;
     private final int NUM_LEVADAS;
     public CordaController(int tipo){
