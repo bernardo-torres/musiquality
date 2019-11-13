@@ -63,15 +63,24 @@ public class Levada{
                 dashboard[i].clear();
     }
 
-    public void switchNota(String nome,int tempo) throws SystemException{
+    public String switchNota(String nome,int tempo) throws SystemException{
         if(tempo<0 || tempo>=tam)
             throw new SystemException("Tamanho invalido!");
         //System.out.println("Foi");
-        if(!dashboard[tempo].contains(nome))
+        
+        if(!dashboard[tempo].contains(nome)){
             dashboard[tempo].add(nome);
-        else
+            this.print(dashboard[tempo]);
+            String ret = "Adicionou " + nome + ", posicao "+ tempo;
+            return ret;
+        }
+         else{
             dashboard[tempo].remove(nome);
-        this.print(dashboard[tempo]);
+            this.print(dashboard[tempo]);
+            String ret = "Removeu " + nome + ", posicao "+ tempo;
+            return ret;
+          }
+      
     }
     
     public void addNota(String nome, int tempo) throws SystemException{
@@ -84,7 +93,7 @@ public class Levada{
     }
     
 
-    public void removeNota(int posicao,String nome) throws SystemException, ModelException{
+    public String removeNota(int posicao,String nome) throws SystemException, ModelException{
         if(posicao<0||posicao>=dashboard.length)
             throw new SystemException("Posicao invalida!");
         System.out.println("remove");
@@ -92,6 +101,8 @@ public class Levada{
         if (remove == false)
             throw new ModelException ("A nota "+ nome + " não está no tempo " + posicao);
         this.print(dashboard[posicao]);
+        String ret = "Removeu " + nome + ", posicao "+ posicao;
+        return ret;
     }
 
     public void limpaNotas() {

@@ -252,6 +252,17 @@ public class TestModel {
         
     }
     
+    @Test
+    public void testGetPersistencia(){
+        Persistencia u = Persistencia.getPersistencia();
+        assertNotNull(u);
+    }
     
+    @Test
+    public void testGetPersistenciaSingleton(){
+        Persistencia u = Persistencia.getPersistencia();
+        Persistencia a = Persistencia.getPersistencia();
+        assertEquals(a, u);
+    }
     
 }

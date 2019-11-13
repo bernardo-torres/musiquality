@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Bernardo.Musica;
+import Musica.Musica;
 import View.CordaTab;
 import View.DrumTab;
 

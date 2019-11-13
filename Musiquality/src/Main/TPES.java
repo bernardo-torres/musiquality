@@ -5,7 +5,7 @@
  */
 package Main;
 
-import Bernardo.TestAudio;
+import Musica.TestAudio;
 import View.MainView;
 /**
  *

@@ -49,25 +49,29 @@ public class CordaController{
         return n.getQtd();
     }
 
-
-    public void switchNota(int selec, String text, int j) {
+    
+    public String switchNota(int selec, String text, int j) {
+        String returnString = "";
         try {
-            l[selec].switchNota(text, j);
+            returnString = l[selec].switchNota(text, j);
         } catch (SystemException ex) {
             Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
         }
+      return returnString;
     }
 
-    public void removeNota(int selec, String nome, int t) {
+    
+    public String removeNota(int selec, String nome, int t) {
         System.out.print("Remove");
+        String returnString = "";
         try {
-            l[selec].removeNota(selec, nome);
+            returnString = l[selec].removeNota(selec, nome);
         } catch (SystemException ex) {
             Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ModelException ex) {
             Logger.getLogger(DrumController.class.getName()).log(Level.SEVERE, null, ex);
         }
-         
+       return returnString;
     }
 
     public int load(int k,JLabel[] notes, JLabel[][] tempo,Color bg, Color selected) {

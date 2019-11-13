@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Bernardo;
+package Musica;
 
-import Bernardo.TestAudio;
+import Musica.TestAudio;
 import Main.TPES;
 import Model.Model.Levada;
 
@@ -25,7 +25,7 @@ public class Musica {
     }
     /* Toca os tempos 0 de todas as levadas de todos os instrumentos, depois toca os
     tempos 1, 2, etc.. */
-    public static void playLevadas(int bpm){
+    public static int playLevadas(int bpm){
         tocando = 1;
         int tempo, levadaCnt;
         float wait = 1000*15/bpm;  // tempo de espera entre 2 tempos
@@ -53,6 +53,7 @@ public class Musica {
             bpmDelay(waitTime);
         }
         tocando = 0;
+       return 1;
     }    
     private static void bpmDelay(int waitTime){
         waitTime = (int)waitTime;
