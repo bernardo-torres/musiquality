@@ -126,7 +126,7 @@ public class DrumControllerTest {
            String text = "Kick";
            int j = 5;
            DrumController instance = new DrumController();
-           // instance.switchNota(selec, text, j);
+           //instance.switchNota(selec, text, j);
            String st = instance.removeNota(selec, text, j);
         
     }
